@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 
 /**
  * \brief Точка входа в программу.
