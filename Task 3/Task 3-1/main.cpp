@@ -22,9 +22,9 @@ double getY(const double x);
 int main()
 {
     const double x = 1;
-    const double step = 0.1;
+    const double step = 0.2;
     const double border = 3;
-    const double firstValue = 1.0;
+    const double firstValue = 0.0;
     for (double x = firstValue; x <= border; x = x + step)
     {
         if (!isCalculated(x))
