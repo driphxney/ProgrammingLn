@@ -1,39 +1,44 @@
-#include<iostream>
-#include<cmath>
-
+#include <cmath>
+#include <iostream>
 using namespace std;
+
 /**
- * \brief функция для расчета значений табуляции
- * \x начало интервала
- * \return значение табуляции
-*/
-double Function(double x);
+ * \brief Проверка косинуса на равенство c 0.
+ * \param x - аргумент функции.
+ * \return - возвращает выполнение или невыполнение условия.
+**/
+bool isCalculated(const double x);
+
 /**
- * \brief Возможность выполнения функции
- * \return в случае успеха, возвращает 1
-bool NoDecision(double x)
+ * \brief Расчет функции.
+ * \param x - аргумент функции.
+ * \return Возвращает значение функции y.
+**/
+double getY(const double x);
 /**
- * \brief Вход в программу
- * \return в случае успеха, возвращает 0
-*/
-int main(){
-	double x = 0.5;
-	const auto z = 1;
-	const auto step = 0.05;
-	
-	for (x; x <= z; x += step){
-		if (NoDecision(x))
-		    cout << "x: " << x << " y: " << Function(x) << endl; 
-	}
-	
-	system("pause");
-	return 0;
+ * \brief Точка входа в программу.
+ * \return Возвращает 0 в случае успешного выполнения.
+ */
+int main()
+{
+    const double x = 1;
+    const double step = 0.1;
+    const double border = 3;
+    const double firstValue = 1.0;
+    for (double x = firstValue; x <= border; x = x + step)
+    {
+        if (!isCalculated(x))
+            cout << "y = " << getY(x) << endl;
+        else cout << "err" << endl;
+    }
+    return 0;
 }
 
-double Function(double x){
-	return x + cos(pow(x, 0.52) + 2);
+bool isCalculated(const double x) {
+    const double epsilon = 0.001;
+    return abs(cos(x)) <= epsilon;
 }
 
-bool NoDecision(double x){
-	return (1/(x + cos(pow(x, 0.52) + 2))) != 0;
+double getY(const double x) {
+    return 3 * x - 14 + exp(x) - exp(-x);
 }
