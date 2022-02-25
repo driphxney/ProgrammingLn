@@ -27,17 +27,11 @@ int main()
     const double firstValue = 0.0;
     for (double x = firstValue; x <= border; x = x + step)
     {
-        if (!isCalculated(x))
-            cout << "y = " << getY(x) << endl;
-        else cout << "err" << endl;
+        cout << "y = " << getY(x) << endl; 
     }
     return 0;
 }
 
-bool isCalculated(const double x) {
-    const double epsilon = 0.001;
-    return abs(cos(x)) <= epsilon;
-}
 
 double getY(const double x) {
     return 3 * x - 14 + exp(x) - exp(-x);
