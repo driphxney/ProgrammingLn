@@ -2,12 +2,6 @@
 #include <iostream>
 using namespace std;
 
-/**
- * \brief Проверка косинуса на равенство c 0.
- * \param x - аргумент функции.
- * \return - возвращает выполнение или невыполнение условия.
-**/
-bool isCalculated(const double x);
 
 /**
  * \brief Расчет функции.
